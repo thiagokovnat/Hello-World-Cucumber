@@ -77,4 +77,9 @@ public class StepDefinitions {
         assertNull(this.nea);
         assertEquals(1, pending);
     }
+
+    @Then("Operation should be denied due to non-existing account")
+    public void operationShouldBeDeniedDueToNonExistingAccount() {
+        assertNotNull(this.nea);
+    }
 }

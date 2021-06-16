@@ -17,6 +17,11 @@ Feature: Email operations
     When Account 'prueba123@gmail.com' sends an email to 'receiver@gmail.com'
     Then 'receiver@gmail.com' has a new pending email
 
+  Scenario: Sending an email to non-existing account
+    Given Account 'prueba123@gmail.com' is already registered
+    When Account 'prueba123@gmail.com' sends an email to 'receiver@gmail.com'
+    Then Operation should be denied due to non-existing account
+
 
 
 
